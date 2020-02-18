@@ -1,0 +1,19 @@
+{
+  "name": "next-serverless",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdhami/next-sls.git"
+  },
+  "author": "Harish Dhami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hdhami/next-sls/issues"
+  },
+  "homepage": "https://github.com/hdhami/next-sls#readme"
+}
