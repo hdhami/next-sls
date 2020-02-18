@@ -3,4 +3,5 @@ node_modules
 *.log
 .idea
 */.DS_Store
+.next
 
