@@ -6,7 +6,7 @@
     "scripts": {
         "build": "next build",
         "start": "next start",
-        "dev": "next",
+        "dev": "NEXT_ENV=local NODE_ENV=development nodemon server.js",
         "precommit": "lint-staged --config .lintstagedrc"
     },
     "repository": {
@@ -20,14 +20,30 @@
     },
     "homepage": "https://github.com/hdhami/next-sls#readme",
     "dependencies": {
+        "@okta/oidc-middleware": "^3.0.0",
+        "cookie-parser": "^1.4.4",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-session": "^1.17.0",
         "next": "^9.2.1",
+        "next-routes": "^1.4.2",
         "react": "^16.12.0",
-        "react-dom": "^16.12.0"
+        "react-dom": "^16.12.0",
+        "request": "^2.88.2"
     },
     "devDependencies": {
+        "babel-eslint": "^10.0.3",
         "eslint": "^6.8.0",
+        "eslint-config-airbnb": "^18.0.1",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-loader": "^3.0.3",
+        "eslint-plugin-import": "^2.20.1",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-prettier": "^3.1.2",
+        "eslint-plugin-react": "^7.18.3",
         "husky": "^4.2.3",
         "lint-staged": "^10.0.7",
+        "nodemon": "^2.0.2",
         "prettier": "^1.19.1"
     }
 }

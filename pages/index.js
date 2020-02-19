@@ -1,9 +1,9 @@
-const Index = () => {
-    return (
-        <div>
-            <p>Welcome to Next</p>
-        </div>
-    );
-};
+import React from 'react';
+
+const Index = () => (
+    <div>
+        <p>Welcome to Next App</p>
+    </div>
+);
 
 export default Index;
