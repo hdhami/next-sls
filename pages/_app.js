@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import App from 'next/app';
 import getConfig from 'next/config';
@@ -15,7 +16,8 @@ class NextSLS extends App {
 
 // eslint-disable-next-line no-unused-vars
 NextSLS.getInitialProps = async appCtx => {
-    appCtx.ctx.res.redirect(SSO_URL);
+    // appCtx.ctx.res.redirect(SSO_URL);
+    console.log('===SSO_URL=====', SSO_URL);
     return {};
 };
 
