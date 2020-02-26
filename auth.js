@@ -1,12 +1,9 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-console */
 const SamlStrategy = require('passport-saml').Strategy;
-const getConfig = require('next/config').default;
 
 module.exports = passport => {
-    const {
-        publicRuntimeConfig: { SAML_ENTRYPOINT, SAML_ISSUER, SAML_CERT }
-    } = getConfig();
+    const { SAML_ENTRYPOINT, SAML_ISSUER, SAML_CERT } = process.env;
 
     const users = [];
 
@@ -44,34 +41,16 @@ module.exports = passport => {
                 cert: SAML_CERT
             },
             (profile, done) => {
-                console.log('Succesfully Profile', profile);
-
                 if (!profile.email) {
                     return done(new Error('No email found'), null);
                 }
 
-                process.nextTick(() => {
-                    console.log('process.nextTick', profile);
-                    findByEmail(profile.email, (err, user) => {
-                        if (err) {
-                            return done(err);
-                        }
-                        if (!user) {
-                            users.push(profile);
-                            return done(null, profile);
-                        }
-                        console.log('Ending Method for profiling');
-                        return done(null, user);
-                    });
-                });
-                return done(null, null);
+                return done(null, profile);
             }
         )
     );
 
     passport.protected = (req, res, next) => {
-        console.log(req.isAuthenticated());
-
         if (req.isAuthenticated()) {
             return next();
         }
