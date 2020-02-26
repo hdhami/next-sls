@@ -14,10 +14,10 @@ class NextSLS extends App {
     }
 }
 
-// eslint-disable-next-line no-unused-vars
 NextSLS.getInitialProps = async appCtx => {
     // appCtx.ctx.res.redirect(SSO_URL);
     console.log('===SSO_URL=====', SSO_URL);
+    console.log('=======cookie===========', appCtx.ctx.req.cookies);
     return {};
 };
 

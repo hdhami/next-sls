@@ -21,6 +21,7 @@ server.post(
     auth.authenticate('saml', { failureRedirect: '/authentication/failure', failureFlash: true }),
     (req, res) => {
         console.log('=============user profile=============', req.user);
+        console.log('=====passport=====', req.session.passport);
         return res.redirect('/qwerty');
     }
 );
